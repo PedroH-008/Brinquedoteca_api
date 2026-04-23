@@ -7,11 +7,11 @@ router = APIRouter(prefix="/brinquedo", tags=["brinquedo"])
 @router.post("", response_model=BrinquedoOut)
 def criar(payload: BrinquedoCreate):
     try:
-        brinquedo = service.criar_brinquedo(payload.codigo, payload.nome, payload.categoria, payload.faixa_etaria_minima, payload.disponivel)
+        brinquedo = service.criar_brinquedo(payload.id, payload.nome, payload.categoria, payload.faixa_etaria_minima, payload.disponivel)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     return BrinquedoOut(
-        codigo=brinquedo.codigo,
+        id=brinquedo.id,
         nome=brinquedo.nome, 
         categoria=brinquedo.categoria, 
         faixa_etaria_minima=brinquedo.faixa_etaria_minima, 
