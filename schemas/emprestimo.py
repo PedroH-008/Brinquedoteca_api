@@ -5,7 +5,7 @@ class EmprestimoCreate(BaseModel):
     crinca_id: int
     brinquedo_id: int
     datas: int
-    status: bool
+    status: bool = True
     multa: int
 
 class EmprestimoOut(BaseModel):
