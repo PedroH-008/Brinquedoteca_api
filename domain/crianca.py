@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-@dataclass(fronze=True)
+@dataclass(frozen=True)
 class Crianca:
     id: int
     nome: str
