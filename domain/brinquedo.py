@@ -9,9 +9,4 @@ class Brinquedo:
     disponivel: bool = True
 
 
-def faixa(self, idade:int) -> int:
-    if idade < faixa_etaria_minima:
-        raise ValueError("Esta a baixo da Faixa Etaria")
-
-
 

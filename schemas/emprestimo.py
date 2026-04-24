@@ -1,17 +1,26 @@
+from datetime import date
+from typing import Optional
 from pydantic import BaseModel
+
 
 class EmprestimoCreate(BaseModel):
     id: int
-    crinca_id: int
+    crianca_id: int
     brinquedo_id: int
-    datas: int
-    status: bool = True
-    multa: int
+    data_emprestimo: date
+    data_prevista_devolucao: date
+
+
+class EmprestimoDevolucao(BaseModel):
+    data_devolucao: Optional[date] = None
+
 
 class EmprestimoOut(BaseModel):
     id: int
-    crinca_id: int
+    crianca_id: int
     brinquedo_id: int
-    datas: int
-    status: bool
-    multa: int
+    data_emprestimo: date
+    data_prevista_devolucao: date
+    data_devolucao: Optional[date]
+    status: str
+    multa: float
